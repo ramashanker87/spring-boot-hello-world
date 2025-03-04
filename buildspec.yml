@@ -14,7 +14,7 @@ phases:
       - echo building docker images
       - docker build -t spring-boot-hello-world .
 
-  post_buid:
+  post_build:
     commands:
       - echo build completed on `date`
       - echo pushing to repo
