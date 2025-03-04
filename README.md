@@ -25,3 +25,10 @@ ci cd repository for springboot
 ## Run and verify the docker images
 
     docker run -p 8080:8080 spring-boot-hello-world:latest
+    http://localhost:8080/hello
+    http://localhost:8080/actuator/health
+
+## Create ECR for Spring app
+```Bash
+    aws cloudformation deploy --template-file ecr-template.yml --stack-name rama-spring-ecr-repo 
+```
