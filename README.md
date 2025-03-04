@@ -33,3 +33,17 @@ ci cd repository for springboot
     aws cloudformation deploy --template-file ecr-template.yml --stack-name rama-spring-ecr-repo 
 ```
 ## Create Code build pipe
+    provide the github url
+    update the access token and verify its connected
+    checkbox for buildspec.yml
+    copy the role and keep it seprately
+
+## Trigger the Build
+
+## If it fails
+
+    update the policy with folloing inline
+    AmazonEC2ContainerRegistryFullAccess
+    AmazonEC2ContainerRegistryPowerUser
+## Re build
+    
