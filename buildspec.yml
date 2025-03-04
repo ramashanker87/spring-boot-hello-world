@@ -29,3 +29,12 @@ phases:
       - printf '[{"name":"%s","imageUri":"%s"}]' $DOCKER_CONTAINER_NAME $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - echo printing imagedefinitions.json
       - cat imagedefinitions.json
+
+  deploy:
+    commands:
+      - echo "Deploying ECS CloudFormation stack..."
+      - aws cloudformation deploy \
+        --template-file ecs-farget-cluster.yml \
+        --stack-name rama-hello-ecs \
+        --capabilities CAPABILITY_NAMED_IAM \
+      - echo "Deployment complete!"
